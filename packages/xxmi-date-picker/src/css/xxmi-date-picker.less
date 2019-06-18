@@ -1,0 +1,128 @@
+.xxmi-date-picker {
+  position: relative;
+  font-size: 12px;
+  width: 360px;
+  height: 380px;
+  padding: 12px;
+  border: 1px solid #DCDFE6;
+  box-sizing: border-box;
+
+
+  .date-month-header {
+    height: 22px;
+    .date-month-header-left {
+      float: left;
+    }
+    .date-month-header-right {
+      float: right;
+    }
+
+    .date-month {
+      height: 22px;
+      line-height: 22px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    i {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      line-height: 22px;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  // 星期排列
+  .week {
+    font-size: 0;
+    margin: 20px 10px 0px 10px;
+    border-bottom: 1px solid #DCDFE6;
+    > span {
+      display: inline-block;
+      width: 44px;
+      height: 33px;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+
+  .date-list {
+    font-size: 0;
+    margin: 20px 10px 0px 10px;
+    > div {
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      line-height: 44px;
+      font-size: 14px;
+      text-align: center;
+      cursor: pointer;
+      box-sizing: border-box;
+
+      > span {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        &.gray {
+          color: #C0C4CC;
+        }
+
+        &.highlight {
+          color: #409EFF;
+          font-weight: bold;
+        }
+
+        &:hover {
+          color: #409EFF;
+        }
+
+        &.active {
+          color: white;
+          font-weight: 500;
+          background-color: #409EFF;
+          border-radius: 100%;
+        }
+      }
+    }
+  }
+
+  .year-box,
+  .month-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 12px;
+    background-color: white;
+    font-size: 0;
+
+    .year-list,
+    .month-list {
+      margin: 20px 0 0 0;
+      padding: 30px 0;
+      border-top: 1px solid #DCDFE6;;
+      > span {
+        width: 25%;
+        height: 50px;
+        display: inline-block;
+        font-size: 14px;
+        text-align: center;
+        cursor: pointer;
+
+        &.highlight {
+          color: #409EFF;
+          font-weight: bold;
+        }
+
+        &:hover {
+          color: #409EFF;
+        }
+      }
+    }
+  }
+}
