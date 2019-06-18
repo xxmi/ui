@@ -28,7 +28,8 @@
     "moment": "^2.24.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.6",
-    "vuedraggable": "^2.21.0"
+    "vuedraggable": "^2.21.0",
+    "xxmi-ui": "^0.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",

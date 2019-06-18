@@ -13,9 +13,10 @@
                     v-for="(element,index) in leftList"
                     :key="'g'+index">
                     {{ element.componenName }}
-                    {{element.sortId}}
+                    {{element.order}}
                 </li>
             </draggable>
+            <pre-code title="leftList" :value="leftList"/>
         </section>
         <section class="drag__right">
             <draggable
@@ -30,15 +31,17 @@
                     v-for="(element,index) in rightList"
                     :key="'g'+index">
                     {{ element.componenName }}
-                    {{element.sortId}}
+                    {{element.order}}
                 </li>
             </draggable>
+            <pre-code title="rightList" :value="rightList"/>
         </section>
     </section>
 </template>
 
 <script>
   import draggable from 'vuedraggable';
+  import PreCode from './pre-code';
 
   const modules = [
     {
@@ -89,133 +92,17 @@
     {
       'showStatus': 1,
       'expandStatus': 1,
-      'compType': 'col-lg-9',
-      'sortId': 5,
-      'componentId': 'compUserActivityRate',
-      'componenCategory': '实用化统计',
-      'componenName': '部门用户活跃率情况',
-    },
-    {
-      'showStatus': 1,
-      'expandStatus': 1,
       'compType': 'col-lg-3',
       'sortId': 2,
       'componentId': 'compNotice',
       'componenCategory': '公共',
       'componenName': '通知公告',
     },
-    {
-      'showStatus': 1,
-      'expandStatus': 1,
-      'compType': 'col-lg-9',
-      'sortId': 6,
-      'componentId': 'compDeptScoresRate',
-      'componenCategory': '实用化统计',
-      'componenName': '部门得分情况',
-    },
-    {
-      'showStatus': 1,
-      'expandStatus': 1,
-      'compType': 'col-lg-9',
-      'sortId': 7,
-      'componentId': 'compBusinessStandard',
-      'componenCategory': '实用化统计',
-      'componenName': '业务本月达标情况',
-    },
-    {
-      'showStatus': 1,
-      'expandStatus': 1,
-      'compType': 'col-lg-9',
-      'sortId': 8,
-      'componentId': 'compYwlczpcx',
-      'componenCategory': '实用化统计',
-      'componenName': '业务流程自评查询',
-    },
-    {
-      'showStatus': 1,
-      'expandStatus': 1,
-      'compType': 'col-lg-9',
-      'sortId': 1,
-      'componentId': 'compDbTable',
-      'componenCategory': '公共',
-      'componenName': '待办',
-    },
-    {
-      'showStatus': 1,
-      'expandStatus': 1,
-      'compType': 'col-lg-9',
-      'sortId': 9,
-      'componentId': 'compQsEcharts',
-      'componenCategory': '实用化统计',
-      'componenName': '全省实用化指标',
-    },
-    {
-      'showStatus': 1,
-      'expandStatus': 1,
-      'compType': 'col-lg-9',
-      'sortId': 10,
-      'componentId': 'compBmdflpm',
-      'componenCategory': '实用化统计',
-      'componenName': '部门得分率排名',
-    },
-    {
-      'showStatus': 1,
-      'expandStatus': 1,
-      'compType': 'col-lg-9',
-      'sortId': 11,
-      'componentId': 'compGrsx',
-      'componenCategory': '公共',
-      'componenName': '工作历',
-    },
-    {
-      'showStatus': 1,
-      'expandStatus': 1,
-      'compType': 'col-lg-9',
-      'sortId': 12,
-      'componentId': 'compZdhjxDzxTable',
-      'componenCategory': '自动化专用',
-      'componenName': '执行中任务',
-    },
-    {
-      'showStatus': 1,
-      'expandStatus': 1,
-      'compType': 'col-lg-9',
-      'sortId': 13,
-      'componentId': 'compZdhjxDshTable',
-      'componenCategory': '自动化专用',
-      'componenName': '待审核任务',
-    },
-    {
-      'showStatus': 1,
-      'expandStatus': 1,
-      'compType': 'col-lg-3',
-      'sortId': 4,
-      'componentId': 'compZdhNotice',
-      'componenCategory': '自动化专用',
-      'componenName': '值班公告备忘录',
-    },
-    {
-      'showStatus': 1,
-      'expandStatus': 1,
-      'compType': 'col-lg-3',
-      'sortId': 5,
-      'componentId': 'compZsczjlTable',
-      'componenCategory': '自动化专用',
-      'componenName': '置数操作记录',
-    },
-    {
-      'showStatus': 1,
-      'expandStatus': 1,
-      'compType': 'col-lg-9',
-      'sortId': 14,
-      'componentId': 'compZdhjxDksTable',
-      'componenCategory': '自动化专用',
-      'componenName': '待开始执行任务',
-    },
   ];
   export default {
     name: 'drag',
     components: {
+      PreCode,
       draggable,
     },
     data() {
@@ -231,6 +118,9 @@
           disabled: false,
           ghostClass: 'ghost',
         };
+      },
+      leftListPre() {
+        return JSON.stringify(this.leftList);
       },
     },
   };
