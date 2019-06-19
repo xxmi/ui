@@ -27,7 +27,6 @@
 // 把 YYYY-MM-DD 改成了 yyyy-MM-dd
 (function (main) {
   'use strict';
-  console.log(main)
   /**
    * Parse or format dates
    * @class fecha

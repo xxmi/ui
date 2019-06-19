@@ -1,6 +1,6 @@
 // import dateUtil from './date';
 const dateUtil =  require('./date')
-import { t } from '_element-ui@2.9.1@element-ui/src/locale';
+import { t } from 'element-ui/src/locale';
 /*eslint-disable*/
 const weeks = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];

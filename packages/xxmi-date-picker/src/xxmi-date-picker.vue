@@ -100,6 +100,10 @@
         type: [String, Array],
         default: '',
       },
+      changeEnable: { // true ：可修改；false：不可修改
+        type: Boolean,
+        default: true,
+      },
     },
     data() {
       return {
@@ -206,11 +210,16 @@
         return clazz;
       },
       selectedDate({ date }) {
-        const { value } = this;
-        const { selectedDateList } = this;
+        const { value, selectedDateList } = this;
+        if (!this.changeEnable) {
+          this.$emit('click', selectedDateList, date, selectedDateList.includes(date));
+          return;
+        }
         let selectVal;
+        let del = false; // true : 从 selectedDateList 删除;false：新增
         if (_.isArray(value)) {
           if (selectedDateList.includes(date)) {
+            del = true;
             // 删除
             for (const [index, elem] of selectedDateList.entries()) {
               if (elem === date) {
@@ -229,7 +238,8 @@
         }
         this.$emit('update:value', selectVal);
         this.$emit('input', selectVal);
-        this.$emit('change', selectVal);
+        this.$emit('click', selectVal, date, del);
+        this.$emit('change', selectVal, date, del);
       },
       prevYear() { // 上一年
         this.year = this.year - 1;

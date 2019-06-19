@@ -5,6 +5,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import 'xxmi-ui/lib/xxmi-ui.css';
 import ElementUI from 'element-ui';
 import XxmiUI from 'xxmi-ui';
+// import XxmiUI from '../src/index';
 import PreCode from './components/pre-code.vue';
 
 Vue.component('PreCode', PreCode);

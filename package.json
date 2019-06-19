@@ -1,6 +1,6 @@
 {
   "name": "xxmi-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "maintainers": [
     "xxmi.cn",
     "art@xxmi.org"
@@ -29,7 +29,7 @@
     "vue": "^2.6.10",
     "vue-router": "^3.0.6",
     "vuedraggable": "^2.21.0",
-    "xxmi-ui": "^0.0.1"
+    "xxmi-ui": "^0.0.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",
@@ -51,7 +51,9 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+      "no-console": "off"
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }
